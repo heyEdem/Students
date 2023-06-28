@@ -1,7 +1,9 @@
-package edem.students;
+package edem.students.Service;
 
+import edem.students.Entities.Student;
+import edem.students.Repository.StudentRepository;
 import org.springframework.stereotype.Service;
-import edem.students.StudentRepository;
+
 import java.util.List;
 import java.util.Optional;
 
@@ -24,8 +26,9 @@ public class StudentService implements ServiceInterface {
     }
 
     @Override
-    public void updateStudent(Student student) {
+    public Student updateStudent(Student student) {
        repository.save(student);
+        return student;
     }
 
     @Override

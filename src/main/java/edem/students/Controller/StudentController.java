@@ -17,13 +17,13 @@ public class StudentController {
         this.service = service;
     }
 
-    @GetMapping("/api")
+    @GetMapping("/all")
     public ResponseEntity<List <Student>> findAllStudents() {
          List <Student> students = service.findAllStudents();
          return new ResponseEntity<>(students, HttpStatus.OK);
     }
 
-    @PostMapping("/api/add")
+    @PostMapping("/add")
     //try  passing a Long if Student doesn't work
     public ResponseEntity <Student> addStudent(@RequestBody Student student){
         Student newStudent = service.createStudent(student);
@@ -33,13 +33,13 @@ public class StudentController {
         return new ResponseEntity<>(newStudent,HttpStatus.CREATED);
     }
 
-    @PutMapping("/api/update")
+    @PutMapping("/update")
     public ResponseEntity<Student> updateStudent(@RequestBody Student student){
         service.updateStudent(student);
         return new ResponseEntity<>( HttpStatus.OK);
     }
 
-    @DeleteMapping("/api/delete/{id}")
+    @DeleteMapping("/delete/{id}")
     public ResponseEntity deleteStudent(@RequestParam("id") Long id){
         service.deleteStudent(id);
         return new ResponseEntity <> (HttpStatus.OK);

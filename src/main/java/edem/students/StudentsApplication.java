@@ -27,11 +27,11 @@ public class StudentsApplication implements ApplicationRunner {
     public void run(ApplicationArguments args) throws Exception {
         List<Student> studentList = service.findAllStudents();
 
-        Student edem = Student.builder().firstname("Edem").lastname("Akato").age(21).number("0549767056").build();
-        Student vera = Student.builder().firstname("Vera").lastname("Caesar").age(21).number("0549767056").build();
-        Student eugene = Student.builder().firstname("Eugene").lastname("Fiakuna").age(21).number("0549767056").build();
-        Student winner = Student.builder().firstname("Winner").lastname("Kpodo").age(21).number("0549767056").build();
-
+        Student edem = Student.builder().firstname("Edem").lastname("Akato").age(21).location("Ghana").number("0549767056").build();
+        Student vera = Student.builder().firstname("Vera").lastname("Caesar").age(21).location("Ghana").number("0549767056").build();
+        Student eugene = Student.builder().firstname("Eugene").lastname("Fiakuna").age(21).location("Ghana").number("0549767056").build();
+        Student winner = Student.builder().firstname("Winner").lastname("Kpodo").age(21).location("Ghana").number("0549767056").build();
         Arrays.asList(edem,vera,winner,eugene).forEach(s-> service.createStudent(s));
+        System.out.println("new students added");
     }
 }

@@ -19,7 +19,7 @@ public class ViewController {
         this.service = service;
     }
 
-    @GetMapping("/api")
+    @GetMapping("/")
     public String getAll(Model model){
         List<Student> studentList = service.findAllStudents();
         model.addAttribute("students",studentList);

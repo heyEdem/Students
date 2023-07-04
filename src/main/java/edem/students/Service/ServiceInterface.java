@@ -6,12 +6,14 @@ import java.util.List;
 import java.util.Optional;
 
 public interface ServiceInterface {
-     List<Student> findAllStudents();
+     List <Student> findAllStudents();
 
      Student createStudent(Student student);
-     Student updateStudent(Student student);
-     void deleteStudent(Long id);
-     Optional <Student>findStudentById(Long id);
 
+     void updateStudent(Student student);
+
+     void deleteStudent(Long id);
+
+     Optional <Student> findStudentById(Long id);
 
 }

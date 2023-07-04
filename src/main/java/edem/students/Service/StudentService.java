@@ -26,9 +26,8 @@ public class StudentService implements ServiceInterface {
     }
 
     @Override
-    public Student updateStudent(Student student) {
+    public void updateStudent(Student student) {
        repository.save(student);
-        return student;
     }
 
     @Override

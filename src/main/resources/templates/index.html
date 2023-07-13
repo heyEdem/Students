@@ -30,7 +30,6 @@
                                     <th>Age</th>
                                     <th>Location</th>
                                     <th>Number</th>
-                                    <th> Actions</th>
                                 </thead>
                                 <tbody>
                                  <tr th:each="student: ${students}">
@@ -40,7 +39,7 @@
                                      <td th:text="${student.getAge()}"></td>
                                      <td th:text="${student.getLocation()}"></td>
                                      <td th:text="${student.getNumber()}"></td>
-                                          <td>
+                                     <td>
                                               <a th:href="@{/api/edit/{id}/(id=${student.id})}" class="btn btn-warning">
                                              <i class="fas fa-solid fa-edit"></i>
                                               </a>

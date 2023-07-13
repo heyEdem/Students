@@ -18,7 +18,6 @@ public class ViewController {
     public ViewController(StudentService service) {
         this.service = service;
     }
-
     @GetMapping("/")
     public String getAll(Model model){
         List<Student> studentList = service.findAllStudents();
@@ -38,10 +37,11 @@ public class ViewController {
     }
 
     @PutMapping
-    @RequestMapping("/api/edit")
-    public String updateStudent(Model model , @RequestBody Student student){
+    @RequestMapping("/api/edit/{id}")
+    public String updateStudent(Model model , @RequestParam("id") Long id, @RequestBody Student student){
         service.updateStudent(student);
-        model.addAttribute("editedStudent",student);
+        model.addAttribute("editedStudent", student);
+
 //        if (id.isPresent()) {
 //           Optional <Student> editedStudent = service.updateStudent(id.get());
 //           if(editedStudent.isPresent()){
@@ -49,6 +49,7 @@ public class ViewController {
 //           }
 //            model.addAttribute("editedStudent", student);
 //        }
+
         return "new-student";
     }
 

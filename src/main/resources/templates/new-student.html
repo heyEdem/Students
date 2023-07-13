@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Student</title>
+</head>
+<body>
+
+    <p class="my-5">
+        <a href="/addBook" class="btn btn-success" >
+            <i class="fas fa-solid fa-plus">Add Book</i>
+        </a>
+    </p>
+    <form action="#" th:action="@{/api/edit}" th:object="${student}" method="post">
+
+        <div class="row">
+            <div class="form-group col-md-8">
+                <label for="firstname" class="col-form-label">Title</label>
+                <input type="text" th:field="${student.firstname}" class="form-control" id="firstname" placeholder="Firstname"/>
+            </div>
+
+            <div class="form-group col-md-8">
+                <label for="lastname" class="col-form-label">Author</label>
+                <input type="text" th:field="${student.lastname}" class="form-control" id="lastname" placeholder="Lastname"/>
+            </div>
+            <div class="form-group col-md-8">
+                <label for="age" class="col-form-label">Description</label>
+                <input type="text" th:field="${student.age}" class="form-control" id="age" placeholder="Description"/>
+            </div>
+
+            <div class="form-group col-md-8">
+                <label for="location" class="col-form-label">Price</label>
+                <input type="text" th:field="${student.location}" class="form-control" id="location" placeholder="Description"/>
+            </div>
+
+            <div class="form-group col-md-8">
+                <label for="number" class="col-form-label">Price</label>
+                <input type="text" th:field="${student.number}" class="form-control" id="number" placeholder="Description"/>
+            </div>
+
+            <div class="form-group col-md-8">
+                <label for="formFile" class="form-label">Default file input example</label>
+                <input class="form-control" type="file" id="formFile">
+            </div>
+            <div class="col-md-6">
+                <input type="submit" class="btn btn-primary" value=" Submit "/>
+            </div>
+            <input type="hidden">
+        </div>
+    </form>
+
+</body>
+</html>
